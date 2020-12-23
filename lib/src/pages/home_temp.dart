@@ -7,7 +7,9 @@ class HomePageTemp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Components temp')),
-      body: ListView(children: _createItems()),
+      body: ListView(
+          //children: _createItems()
+          children: _createItemShort()),
     );
   }
 
@@ -21,5 +23,13 @@ class HomePageTemp extends StatelessWidget {
       list..add(tempWidget)..add(Divider());
     }
     return list;
+  }
+
+  List<Widget> _createItemShort() {
+    return options.map((item) {
+      return Column(
+        children: <Widget>[ListTile(title: Text(item + '! ')), Divider()],
+      );
+    }).toList();
   }
 }
