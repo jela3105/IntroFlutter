@@ -28,7 +28,16 @@ class HomePageTemp extends StatelessWidget {
   List<Widget> _createItemShort() {
     return options.map((item) {
       return Column(
-        children: <Widget>[ListTile(title: Text(item + '! ')), Divider()],
+        children: <Widget>[
+          ListTile(
+            title: Text(item + '! '),
+            subtitle: Text('Anything to show'),
+            leading: Icon(Icons.account_circle),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {},
+          ),
+          Divider()
+        ],
       );
     }).toList();
   }
