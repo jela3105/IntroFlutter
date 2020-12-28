@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
         'alert': (BuildContext context) => AlertPage(),
         'avatar': (BuildContext context) => AvatarPage(),
       },
+      onGenerateRoute: (RouteSettings settings) {
+        print('ROUTE CALLED ${settings.name}');
+      },
     );
   }
 }
