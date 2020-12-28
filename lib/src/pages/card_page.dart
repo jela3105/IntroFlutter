@@ -7,7 +7,13 @@ class CardPage extends StatelessWidget {
       appBar: AppBar(title: Text('CardPage')),
       body: ListView(
         padding: EdgeInsets.all(10.0),
-        children: <Widget>[_cardType1()],
+        children: <Widget>[
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2()
+        ],
       ),
     );
   }
@@ -38,6 +44,22 @@ class CardPage extends StatelessWidget {
               ),
             ],
           )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardType2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image(
+            image: NetworkImage(
+                'https://i.pinimg.com/originals/34/59/3b/34593bc301b2ab36e6fa1d7f7799d6fa.jpg'),
+          ),
+          Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text('Text to show the border radius')),
         ],
       ),
     );
