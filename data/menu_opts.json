@@ -4,7 +4,7 @@
     {
       "route": "alert",
       "icon": "add_alert",
-      "text": "Alertas"
+      "text": "Alerts"
     },
     {
       "route": "avatar",

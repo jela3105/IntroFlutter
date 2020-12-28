@@ -1,4 +1,3 @@
-import 'package:components/src/pages/alert_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:components/src/prividers/menu_provider.dart';
@@ -26,10 +25,6 @@ class HomePage extends StatelessWidget {
         );
       },
     );
-
-    //return ListView(
-    //  children: _listItems(),
-    //);
   }
 
   List<Widget> _listItems(List<dynamic> data, BuildContext context) {
@@ -44,8 +39,6 @@ class HomePage extends StatelessWidget {
           color: Colors.blue,
         ),
         onTap: () {
-          //final route = MaterialPageRoute(builder: (context) => AlertPage());
-          //Navigator.push(context, route);
           Navigator.pushNamed(context, opt['route']);
         },
       );
