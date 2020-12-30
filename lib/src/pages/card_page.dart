@@ -12,7 +12,34 @@ class CardPage extends StatelessWidget {
           SizedBox(
             height: 30.0,
           ),
-          _cardType2()
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardType2(),
+          SizedBox(
+            height: 30.0,
+          ),
         ],
       ),
     );
@@ -81,7 +108,7 @@ class CardPage extends StatelessWidget {
             BoxShadow(
                 color: Colors.black26,
                 blurRadius: 10.0,
-                spreadRadius: 2.0,
+                spreadRadius: 1.0,
                 offset: Offset(2.0, 10.0))
           ]),
       child: ClipRRect(child: card, borderRadius: BorderRadius.circular(30.0)),
