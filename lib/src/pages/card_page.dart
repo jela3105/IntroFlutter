@@ -52,7 +52,7 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardType2() {
-    return Card(
+    final card = Container(
       child: Column(
         children: <Widget>[
           //Image(
@@ -72,6 +72,19 @@ class CardPage extends StatelessWidget {
               child: Text('Text to show the border radius')),
         ],
       ),
+    );
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]),
+      child: ClipRRect(child: card, borderRadius: BorderRadius.circular(30.0)),
     );
   }
 }
