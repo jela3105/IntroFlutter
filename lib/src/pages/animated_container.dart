@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class AnimatedContainerPage extends StatefulWidget {
   @override
@@ -31,10 +32,13 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   }
 
   void _changeContainer() {
+    final random = Random();
     setState(() {
-      _width = 100.0;
-      _height = 20.0;
-      _color = Colors.black;
+      _width = random.nextInt(300).toDouble();
+      _height = random.nextInt(300).toDouble();
+      _color = Color.fromRGBO(
+          random.nextInt(300), random.nextInt(300), random.nextInt(300), 1);
+      _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
     });
   }
 }
