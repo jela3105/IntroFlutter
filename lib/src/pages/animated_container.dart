@@ -24,11 +24,17 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         decoration: BoxDecoration(color: _color, borderRadius: _borderRadius),
       )),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pop(context);
-        },
+        child: Icon(Icons.play_arrow),
+        onPressed: _changeContainer,
       ),
     );
+  }
+
+  void _changeContainer() {
+    setState(() {
+      _width = 100.0;
+      _height = 20.0;
+      _color = Colors.black;
+    });
   }
 }
