@@ -19,11 +19,14 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         title: Text('Animated Container'),
       ),
       body: Center(
-          child: Container(
-        width: _width,
-        height: _height,
-        decoration: BoxDecoration(color: _color, borderRadius: _borderRadius),
-      )),
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          curve: Curves.fastOutSlowIn,
+          width: _width,
+          height: _height,
+          decoration: BoxDecoration(color: _color, borderRadius: _borderRadius),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
         onPressed: _changeContainer,
