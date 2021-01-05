@@ -16,7 +16,11 @@ class _InputPageState extends State<InputPage> {
         title: Text('Input of text'),
       ),
       body: ListView(
-        children: <Widget>[_createInput()],
+        children: <Widget>[
+          _createInput(),
+          Divider(),
+          _createPerson(),
+        ],
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       ),
       floatingActionButton: FloatingActionButton(
@@ -33,7 +37,7 @@ class _InputPageState extends State<InputPage> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        counter: Text('Characteres 0'),
+        counter: Text('Characteres ${_name.length}'),
         hintText: 'Name of the person',
         labelText: 'Name',
         suffixIcon: Icon(Icons.accessibility),
@@ -41,8 +45,16 @@ class _InputPageState extends State<InputPage> {
         icon: Icon(Icons.account_box),
       ),
       onChanged: (value) {
-        _name = value;
+        setState(() {
+          _name = value;
+        });
       },
+    );
+  }
+
+  Widget _createPerson() {
+    return ListTile(
+      title: Text('Name is: $_name'),
     );
   }
 }
