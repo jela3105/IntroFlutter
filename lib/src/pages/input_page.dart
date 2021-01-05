@@ -11,12 +11,29 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animated Container'),
+        title: Text('Input of text'),
       ),
-      body: Center(),
+      body: ListView(
+        children: <Widget>[_createInput()],
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
         onPressed: () {},
+      ),
+    );
+  }
+
+  Widget _createInput() {
+    return TextField(
+      textCapitalization: TextCapitalization.sentences,
+      decoration: InputDecoration(
+        counter: Text('Characteres 0'),
+        hintText: 'Name of the person',
+        labelText: 'Name',
+        suffixIcon: Icon(Icons.accessibility),
+        helperText: 'Just the name',
+        icon: Icon(Icons.account_box),
       ),
     );
   }
