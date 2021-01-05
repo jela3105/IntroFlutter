@@ -7,6 +7,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  String _name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +30,9 @@ class _InputPageState extends State<InputPage> {
     return TextField(
       textCapitalization: TextCapitalization.sentences,
       decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
         counter: Text('Characteres 0'),
         hintText: 'Name of the person',
         labelText: 'Name',
@@ -35,6 +40,9 @@ class _InputPageState extends State<InputPage> {
         helperText: 'Just the name',
         icon: Icon(Icons.account_box),
       ),
+      onChanged: (value) {
+        _name = value;
+      },
     );
   }
 }
