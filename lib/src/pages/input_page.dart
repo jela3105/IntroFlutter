@@ -22,6 +22,8 @@ class _InputPageState extends State<InputPage> {
           Divider(),
           _createEmail(),
           Divider(),
+          _createPassworld(),
+          Divider(),
           _createPerson(),
           Divider(),
         ],
@@ -48,11 +50,9 @@ class _InputPageState extends State<InputPage> {
         helperText: 'Just the name',
         icon: Icon(Icons.account_box),
       ),
-      onChanged: (value) {
-        setState(() {
-          _name = value;
-        });
-      },
+      onChanged: (value) => setState(() {
+        _name = value;
+      }),
     );
   }
 
@@ -75,11 +75,25 @@ class _InputPageState extends State<InputPage> {
         suffixIcon: Icon(Icons.alternate_email),
         icon: Icon(Icons.email),
       ),
-      onChanged: (value) {
-        setState(() {
-          _email = value;
-        });
-      },
+      onChanged: (value) => setState(() {
+        _email = value;
+      }),
+    );
+  }
+
+  Widget _createPassworld() {
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        hintText: 'Password',
+        labelText: 'Password',
+        suffixIcon: Icon(Icons.lock_open),
+        icon: Icon(Icons.lock),
+      ),
+      onChanged: (value) => setState(() {}),
     );
   }
 }
