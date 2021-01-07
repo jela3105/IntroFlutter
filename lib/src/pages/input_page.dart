@@ -7,7 +7,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  String _name;
+  String _name = '';
+  String _email = '';
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,10 @@ class _InputPageState extends State<InputPage> {
         children: <Widget>[
           _createInput(),
           Divider(),
+          _createEmail(),
+          Divider(),
           _createPerson(),
+          Divider(),
         ],
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       ),
@@ -55,6 +59,27 @@ class _InputPageState extends State<InputPage> {
   Widget _createPerson() {
     return ListTile(
       title: Text('Name is: $_name'),
+      subtitle: Text('Email: $_email'),
+    );
+  }
+
+  Widget _createEmail() {
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        hintText: 'Email ',
+        labelText: 'Email',
+        suffixIcon: Icon(Icons.alternate_email),
+        icon: Icon(Icons.email),
+      ),
+      onChanged: (value) {
+        setState(() {
+          _email = value;
+        });
+      },
     );
   }
 }
