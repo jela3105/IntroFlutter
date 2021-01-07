@@ -9,6 +9,9 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   String _name = '';
   String _email = '';
+  String _date = '';
+
+  TextEditingController _inputFieldDateController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,9 @@ class _InputPageState extends State<InputPage> {
           Divider(),
           _createEmail(),
           Divider(),
-          _createPassworld(),
+          _createPassword(),
+          Divider(),
+          _createDate(context),
           Divider(),
           _createPerson(),
           Divider(),
@@ -81,7 +86,7 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-  Widget _createPassworld() {
+  Widget _createPassword() {
     return TextField(
       obscureText: true,
       decoration: InputDecoration(
@@ -95,5 +100,39 @@ class _InputPageState extends State<InputPage> {
       ),
       onChanged: (value) => setState(() {}),
     );
+  }
+
+  Widget _createDate(BuildContext context) {
+    return TextField(
+      controller: _inputFieldDateController,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        hintText: 'Birthday',
+        labelText: 'Birthday',
+        suffixIcon: Icon(Icons.perm_contact_calendar),
+        icon: Icon(Icons.calendar_today),
+      ),
+      onTap: () {
+        FocusScope.of(context).requestFocus(new FocusNode());
+        _selectDate(context);
+      },
+    );
+  }
+
+  _selectDate(BuildContext context) async {
+    DateTime pickedDay = await showDatePicker(
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(2018),
+      lastDate: new DateTime(2025),
+    );
+    if (pickedDay != null) {
+      setState(() {
+        _date = pickedDay.toString();
+        _inputFieldDateController.text = _date;
+      });
+    }
   }
 }
