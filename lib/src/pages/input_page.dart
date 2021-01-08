@@ -69,6 +69,7 @@ class _InputPageState extends State<InputPage> {
     return ListTile(
       title: Text('Name is: $_name'),
       subtitle: Text('Email: $_email'),
+      trailing: Text(_selectedOption),
     );
   }
 
@@ -153,14 +154,22 @@ class _InputPageState extends State<InputPage> {
   }
 
   Widget _createDropdown() {
-    return DropdownButton(
-      value: _selectedOption,
-      items: getOptionsDropdown(),
-      onChanged: (opt) {
-        setState(() {
-          _selectedOption = opt;
-        });
-      },
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(
+          width: 30.0,
+        ),
+        DropdownButton(
+          value: _selectedOption,
+          items: getOptionsDropdown(),
+          onChanged: (opt) {
+            setState(() {
+              _selectedOption = opt;
+            });
+          },
+        ),
+      ],
     );
   }
 }
