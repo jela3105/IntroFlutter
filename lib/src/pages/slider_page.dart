@@ -15,8 +15,12 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Slider'),
       ),
       body: Container(
+        padding: EdgeInsets.only(top: 50.0),
         child: Column(
-          children: <Widget>[_createSlider()],
+          children: <Widget>[
+            _createSlider(),
+            Expanded(child: _createImage()),
+          ],
         ),
       ),
     );
@@ -24,6 +28,8 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _createSlider() {
     return Slider(
+      activeColor: Colors.indigoAccent,
+      label: 'Image size',
       value: _sliderValue,
       min: 10.0,
       max: 400.0,
@@ -32,6 +38,15 @@ class _SliderPageState extends State<SliderPage> {
           _sliderValue = value;
         });
       },
+    );
+  }
+
+  Widget _createImage() {
+    return Image(
+      image: NetworkImage(
+          'https://www.cecyt9.ipn.mx/assets/files/cecyt9/img/escudos/escudoCECyT9.png'),
+      width: _sliderValue,
+      fit: BoxFit.contain,
     );
   }
 }
