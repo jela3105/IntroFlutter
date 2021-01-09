@@ -6,6 +6,8 @@ class SliderPage extends StatefulWidget {
 }
 
 class _SliderPageState extends State<SliderPage> {
+  double _sliderValue = 100.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,8 +15,23 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Slider'),
       ),
       body: Container(
-        child: Text('Slider Page'),
+        child: Column(
+          children: <Widget>[_createSlider()],
+        ),
       ),
+    );
+  }
+
+  Widget _createSlider() {
+    return Slider(
+      value: _sliderValue,
+      min: 10.0,
+      max: 400.0,
+      onChanged: (value) {
+        setState(() {
+          _sliderValue = value;
+        });
+      },
     );
   }
 }
