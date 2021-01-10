@@ -7,6 +7,7 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   double _sliderValue = 100.0;
+  bool _blockCheckBox = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class _SliderPageState extends State<SliderPage> {
         child: Column(
           children: <Widget>[
             _createSlider(),
+            _createCheckBox(),
             Expanded(child: _createImage()),
           ],
         ),
@@ -47,6 +49,17 @@ class _SliderPageState extends State<SliderPage> {
           'https://www.cecyt9.ipn.mx/assets/files/cecyt9/img/escudos/escudoCECyT9.png'),
       width: _sliderValue,
       fit: BoxFit.contain,
+    );
+  }
+
+  Widget _createCheckBox() {
+    return Checkbox(
+      value: _blockCheckBox,
+      onChanged: (value) {
+        setState(() {
+          _blockCheckBox = value;
+        });
+      },
     );
   }
 }
