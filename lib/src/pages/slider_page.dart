@@ -35,11 +35,13 @@ class _SliderPageState extends State<SliderPage> {
       value: _sliderValue,
       min: 10.0,
       max: 400.0,
-      onChanged: (value) {
-        setState(() {
-          _sliderValue = value;
-        });
-      },
+      onChanged: (_blockCheckBox)
+          ? null
+          : (value) {
+              setState(() {
+                _sliderValue = value;
+              });
+            },
     );
   }
 
@@ -53,7 +55,8 @@ class _SliderPageState extends State<SliderPage> {
   }
 
   Widget _createCheckBox() {
-    return Checkbox(
+    return CheckboxListTile(
+      title: Text('Block slider'),
       value: _blockCheckBox,
       onChanged: (value) {
         setState(() {
