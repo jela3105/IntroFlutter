@@ -57,6 +57,8 @@ class _ListPageState extends State<ListPage> {
           return FadeInImage(
             image: NetworkImage('http://picsum.photos/500/300/?image=$image'),
             placeholder: AssetImage('assets/jar-loading.gif'),
+            height: 200,
+            fit: BoxFit.cover,
           );
         },
       ),
