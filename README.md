@@ -1,6 +1,6 @@
 # components
 
-A new Flutter project.
+This Flutter app use the most common components.
 
 ## Getting Started
 
@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+### Home Page
+
+The [home page](lib/src/pages/home_page.dart) contains a list of options to navigate to each example of the widget's implementation.
