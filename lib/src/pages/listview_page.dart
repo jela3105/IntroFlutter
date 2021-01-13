@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -47,17 +46,20 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _createList() {
-    return ListView.builder(
-      itemCount: _numberList.length,
-      controller: _scrollController,
-      itemBuilder: (BuildContext context, int index) {
-        final image = _numberList[index];
+    return RefreshIndicator(
+      onRefresh: getPage1,
+      child: ListView.builder(
+        itemCount: _numberList.length,
+        controller: _scrollController,
+        itemBuilder: (BuildContext context, int index) {
+          final image = _numberList[index];
 
-        return FadeInImage(
-          image: NetworkImage('http://picsum.photos/500/300/?image=$image'),
-          placeholder: AssetImage('assets/jar-loading.gif'),
-        );
-      },
+          return FadeInImage(
+            image: NetworkImage('http://picsum.photos/500/300/?image=$image'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+          );
+        },
+      ),
     );
   }
 
@@ -103,5 +105,15 @@ class _ListPageState extends State<ListPage> {
     } else {
       return Container();
     }
+  }
+
+  Future<Null> getPage1() async {
+    final duration = new Duration(seconds: 2);
+    new Timer(duration, () {
+      _numberList.clear();
+      _lastItem++;
+      _addImages();
+    });
+    return Future.delayed(duration);
   }
 }
