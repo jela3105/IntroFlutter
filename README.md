@@ -24,14 +24,13 @@ samples, guidance on mobile development, and a full API reference.
 - [Cards](https://github.com/jela3105/IntroFlutter#cards)
 - [Animated Container](https://github.com/jela3105/IntroFlutter#animated-container)
 - [Inputs](https://github.com/jela3105/IntroFlutter#inputs)
-- [Sliders - Checks](https://github.com/jela3105/IntroFlutter#)
+- [Sliders - Checks](https://github.com/jela3105/IntroFlutter#sliders---checks)
 - [List and Scroll](https://github.com/jela3105/IntroFlutter#list-and-scroll)
 
 #### Home Page
 
 The [home page](lib/src/pages/home_page.dart) contains a list of options to navigate to each example of the widget's implementation.
-![Home Page](https://user-images.githubusercontent.com/46289656/104409262-8055e680-552b-11eb-9aa5-6aef710a9ca7.png)
-
+<Img src='https://user-images.githubusercontent.com/46289656/104531042-e6497900-55d2-11eb-9597-e212a6e6cf52.jpg' width='400' height='700' />
 #### Alerts
 #### Avatars
 #### Cards
