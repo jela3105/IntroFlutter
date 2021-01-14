@@ -38,10 +38,6 @@ class _InputPageState extends State<InputPage> {
         ],
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.play_arrow),
-        onPressed: () {},
-      ),
     );
   }
 
@@ -114,8 +110,8 @@ class _InputPageState extends State<InputPage> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        hintText: 'Birthday',
-        labelText: 'Birthday',
+        hintText: 'Date',
+        labelText: 'Date',
         suffixIcon: Icon(Icons.perm_contact_calendar),
         icon: Icon(Icons.calendar_today),
       ),
@@ -130,7 +126,7 @@ class _InputPageState extends State<InputPage> {
     DateTime pickedDay = await showDatePicker(
       context: context,
       initialDate: new DateTime.now(),
-      firstDate: new DateTime(2018),
+      firstDate: new DateTime(1960),
       lastDate: new DateTime(2025),
       locale: Locale('es', 'ES'),
     );
