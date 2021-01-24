@@ -35,25 +35,25 @@ The [home page](lib/src/pages/home_page.dart) contains a list of options to navi
 
 #### Alerts
 
-The [alert page](lib/src/pages/alert_page.dart) contains and example of an alert when the button "show alert" is press, and has a floating action button that helps you back to the [home page](https://github.com/jela3105/IntroFlutter#home-page)
+The [alert page](lib/src/pages/alert_page.dart) contains and example of an alert when the button "show alert" is press. This page has a floating action button too, that helps you back to the [home page](https://github.com/jela3105/IntroFlutter#home-page)
 <br/>
 <Img src='https://user-images.githubusercontent.com/46289656/104534479-fe70c680-55d9-11eb-9f3d-23c8f446fdf8.gif' width='400' height='900' />
 
 #### Avatars
 
-The [avatars page](lib/src/pages/avatar_page.dart) contains and example of avatars icons in the top-right of the page, the icon uses the [NetWorkImage](https://api.flutter.dev/flutter/painting/NetworkImage-class.html) widget to load the image, at the same time and image is shown at the center of the page using [FadeInImage](https://api.flutter.dev/flutter/widgets/FadeInImage-class.html) widget. 
+The [avatars page](lib/src/pages/avatar_page.dart) contains an example of avatars icons in the top-right of the page, the icon uses the [NetWorkImage](https://api.flutter.dev/flutter/painting/NetworkImage-class.html) widget to load the image, at the same time an image is shown at the center of the page using [FadeInImage](https://api.flutter.dev/flutter/widgets/FadeInImage-class.html) widget. 
 <br/>
 <Img src='https://user-images.githubusercontent.com/46289656/104534484-ffa1f380-55d9-11eb-89ce-cf2cad7ea58f.gif' width='400' height='900' />
 
 #### Cards
 
-The [cards page](lib/src/pages/card_page.dart) 
+The [cards page](lib/src/pages/card_page.dart) constanis two types of cards, the first one is made with [Cards](https://api.flutter.dev/flutter/material/Card-class.html) widget and the second one is made with a Container.
 <br/>
 <Img src='https://user-images.githubusercontent.com/46289656/104534485-ffa1f380-55d9-11eb-8c18-176bd424de03.gif' width='400' height='900' />
 
 #### Animated Container
 
-The [animated container page](lib/src/pages/animated_container.dart)  
+The [animated container page](lib/src/pages/animated_container.dart) is a implementation of the interactive example in the [animated container](https://flutter.dev/docs/cookbook/animation/animated-container) page.
 <br/>
 <Img src='https://user-images.githubusercontent.com/46289656/104534482-ff095d00-55d9-11eb-9e45-315d4ea016a4.gif' width='400' height='900' />
 
